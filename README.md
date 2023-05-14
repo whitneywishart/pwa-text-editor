@@ -5,7 +5,7 @@ Just Another Text Editor (JATE) is a PWA exercise.
 * Notes entered in the editor are automatically stored in an IndexedDB database
 * HTML, service worker and manifest files are automatically generated
 * Locally installable
-* Offline functinonality
+* Offline functionality
 
 
 ## Installation
