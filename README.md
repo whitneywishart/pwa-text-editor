@@ -16,7 +16,9 @@ What are the steps required to install your project? Provide a step-by-step desc
 <br><br>
 
 ## Usage
+Install packages:
 
+Run notes:
 <br><br>
 
 ### Screenshot
