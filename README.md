@@ -1,25 +1,33 @@
 # PWA Text Editor
 
 ## Description
+Just Another Text Editor (JATE) is a PWA exercise. 
+* Notes entered in the editor are automatically stored in an IndexedDB database
+* HTML, service worker and manifest files are automatically generated
+* Locally installable
+* Offline functinonality
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-<br><br>
+<br>
 
 ## Installation
+Run `npm install` to install the required packages.
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
-<br><br>
+<br>
 
 ## Usage
-Install packages:
+Run `npm run start` to launch the editor.
 
-Run notes:
-<br><br>
+<br>
+
+## GitHub Repo
+https://github.com/whitneywishart/pwa-text-editor
+
+<br>
+
+## Heroku Deployment
+https://
+
+<br>
 
 ### Screenshot
 <img src="./assets/screenshot.png" width="800">
