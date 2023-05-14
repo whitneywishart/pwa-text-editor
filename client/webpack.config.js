@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
-const { InjectManifest } = require('workbox-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 
 // TODO: Add and configure workbox plugins for a service worker and manifest file.
 // TODO: Add CSS loaders and babel to webpack.
@@ -18,16 +18,40 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      // Webpack plugin that generates our html file and injects our bundles. 
+      // Webpack plugin that generates our html file and injects our bundles.
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'Contact Cards'
       }),
 
       // Injects our custom service worker
-      new InjectManifest({
-        swSrc: './src-sw.js',
+      new GenerateSW({
         swDest: 'src-sw.js',
+
+        runtimeCaching: [
+          {
+            // Match any request that ends with these file extensions
+            urlPattern: /\.(?:png|jpg|jpeg|svg|webp)$/,
+            // Apply a cache-first strategy
+            handler: 'CacheFirst',
+            options: {
+              // Use a custom cache name
+              cacheName: 'images',
+              // Only cache 2 images
+              expiration: {
+                maxEntries: 2,
+              }
+            }
+          },
+          {
+            urlPattern: /^https:\/\/api\.example\.com\/data/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'api-data',
+              networkTimeoutSeconds: 5
+            }
+          }
+        ]
       }),
 
       // Creates a manifest.json file.
@@ -58,7 +82,7 @@ module.exports = () => {
         {
           test: /\.m?js$/,
           exclude: /node_modules/,
-          // We use babel-loader in order to use ES6.
+          // Babel-loader to use ES6.
           use: {
             loader: 'babel-loader',
             options: {
