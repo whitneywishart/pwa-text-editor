@@ -20,7 +20,7 @@ https://github.com/whitneywishart/pwa-text-editor
 
 
 ## Heroku Deployment
-https://
+https://wishart-pwa-text-editor.herokuapp.com/
 
 
 ### Screenshot
