@@ -31,12 +31,11 @@
       "type": "image/png"
     }
   ],
-  "name": "Contact Cards",
-  "short_name": "Contact",
+  "name": "App",
+  "short_name": "App",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": "./",
-  "description": "Never forget your contacts!",
   "background_color": "#225ca3",
   "theme_color": "#225ca3"
 }
